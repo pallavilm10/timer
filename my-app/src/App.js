@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // src/Countdown.js
 import React, { useState, useEffect } from 'react';
 import { FaPlay, FaPause, FaStop } from 'react-icons/fa';
@@ -57,66 +56,6 @@ const Countdown = () => {
     return String(time).padStart(2, '0');
   };
 
-=======
-
-import React, { useState, useEffect } from 'react';
-import { FaPlay, FaPause, FaStop } from 'react-icons/fa';
-import './countdown.css';
-
-const Countdown = () => {
-
-  
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
-  const [isActive, setIsActive] = useState(false);
-
-  useEffect(() => {
-    let interval;
-
-    if (isActive) {
-      interval = setInterval(() => {
-        if (minutes === 0 && seconds === 0) {
-          clearInterval(interval);
-          setIsActive(false);
-        } else {
-          if (seconds === 0) {
-            setMinutes((prevMinutes) => prevMinutes - 1);
-            setSeconds(59);
-          } else {
-            setSeconds((prevSeconds) => prevSeconds - 1);
-          }
-        }
-      }, 1000);
-    }
-
-    return () => clearInterval(interval);
-  }, [isActive, minutes, seconds]);
-
-  const handleStart = () => {
-    setIsActive(true);
-  };
-
-  const handlePause = () => {
-    setIsActive(false);
-  };
-
-  const handleStop = () => {
-    setIsActive(false);
-    setMinutes(0);
-    setSeconds(0);
-  };
-
-  const handleReset = () => {
-    setIsActive(false);
-    setMinutes(0);
-    setSeconds(0);
-  };
-
-  const formatTime = (time) => {
-    return String(time).padStart(2, '0');
-  };
-
->>>>>>> 024c257c0546b651a535a3c3ba8d112099828b2e
   return (
     
     <div className="container">
@@ -152,11 +91,5 @@ const Countdown = () => {
     </div>
   );
 };
-<<<<<<< HEAD
 
 export default Countdown;
-=======
-
-export default Countdown;
-
->>>>>>> 024c257c0546b651a535a3c3ba8d112099828b2e
